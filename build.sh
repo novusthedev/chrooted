@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ver=("1.1")
-
 echo "Building chrooted..."
 chmod +777 scripts/*
 chmod +x bin/*
