@@ -24,6 +24,7 @@ Help () {
    echo "backup: Backs up the current state of an instance."
    echo "restore: Restores an instance from a backup state."
    echo "bcremove: Removes a backup from an instance."
+   echo ""
    echo "Root is required to run any of these commands."
 }
 

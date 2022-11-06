@@ -19,6 +19,7 @@ echo ""
 echo -n "Name the chroot enviorment you are restoring a backup from: "
 read name
 echo ""
+mkdir -p /usr/share/chrooted/instances/$name/backups/
 echo "All current backups for $name:"
 ls /usr/share/chrooted/instances/$name/backups/
 echo ""

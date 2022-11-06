@@ -18,6 +18,7 @@ ls /usr/share/chrooted/instances/
 echo ""
 echo -n "Name the chroot enviorment you want to view backups from: "
 read name
+mkdir -p /usr/share/chrooted/instances/$name/backups/
 echo ""
 echo "All backups for $name:"
 ls /usr/share/chrooted/instances/$name/backups/

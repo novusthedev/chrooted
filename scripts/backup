@@ -22,6 +22,7 @@ echo -n "Name the backup for $name: "
 read bcname
 echo "Backing up the current state of $name..."
 echo "Please do not interrupt this process."
+mkdir -p /usr/share/chrooted/instances/$name/backups/
 mksquashfs /usr/share/chrooted/instances/$name/root/ /usr/share/chrooted/instances/$name/backups/$bcname.sfs
 echo "Instance $name has been backed up successfully."
 echo "You can restore from this backup by running chrooted restore."

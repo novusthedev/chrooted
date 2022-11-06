@@ -31,6 +31,7 @@ read image
 echo "Creating instance..."
 mkdir -p /usr/share/chrooted/instances/$name/
 unsquashfs -f -d /usr/share/chrooted/instances/$name/root/ /usr/share/chrooted/images/$os/$image
+xhost +
 clear
 echo "Your instance ($name) running $os has been installed!"
 echo "To exit and return to your current OS, run exit"
