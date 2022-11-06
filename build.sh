@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ver=("1.1")
+
 echo "Building chrooted..."
 chmod +777 scripts/*
 chmod +x bin/*
@@ -16,6 +18,13 @@ install -Dm755 scripts/create \
 	scripts/list \
 	scripts/remove \
 	scripts/rename \
+	scripts/backup \
+	scripts/bclist \
+	scripts/restore \
+	scripts/bcremove \
 	scripts/start  -t "usr/share/chrooted/scripts/"
 install -Dm755 bin/chroot -t "usr/share/chrooted/bin/"
+install -Dm755 install.sh -t "usr/"
+mkdir -p chrooted-bin/
+mv usr/ chrooted-bin/
 echo "Building complete!"

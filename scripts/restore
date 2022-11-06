@@ -1,0 +1,33 @@
+#/usr/bin/bash
+
+# Test for root user
+rootuser () {
+  if [[ "$EUID" = 0 ]]; then
+    continue
+  else
+    echo "Please Run As Root"
+    sleep 2
+    exit
+  fi
+}
+
+rootuser
+echo ""
+echo "Currently installed chroot instances:"
+ls /usr/share/chrooted/instances/
+echo ""
+echo -n "Name the chroot enviorment you are restoring a backup from: "
+read name
+echo ""
+echo "All current backups for $name:"
+ls /usr/share/chrooted/instances/$name/backups/
+echo ""
+echo -n "Choose a backup to restore from: "
+read bcname
+echo "Removing current $name filesystem..."
+rm -r /usr/share/chrooted/instances/$name/root/
+echo "Restoring the backup state of $name..."
+echo "Please do not interrupt this process."
+unsquashfs -f -d /usr/share/chrooted/instances/$name/root/ /usr/share/chrooted/instances/$name/backups/$bcname.sfs
+echo "The backup $bcname has been restored successfully."
+echo "You can delete this backup by running chrooted bcremove."
