@@ -1,0 +1,23 @@
+#/usr/bin/bash
+
+Help () {
+   # Display Help
+   echo "Help commands for chrooted:"
+   echo ""
+   echo "list: List all images and instances currently on your system."
+   echo "download: Downloads an image for enviorments to use."
+   echo "create: Creates an instance using a downloaded image and installs it."
+   echo "start: Starts an instance currently installed on your system."
+   echo "rename: Renames an instance currently installed on your system."
+   echo "remove: Removes an image from your system. This does not affect any instances installed on your system."
+   echo "delete: Removes an instance currently installed on your system."
+   echo ""
+   echo "Root is required to run any of these commands."
+}
+
+if [ $# == 0 ]; then
+        Help
+		exit 1
+fi
+
+/usr/share/chrooted/scripts/$1

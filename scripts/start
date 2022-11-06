@@ -1,0 +1,26 @@
+#/usr/bin/bash
+
+# Test for root user
+rootuser () {
+  if [[ "$EUID" = 0 ]]; then
+    continue
+  else
+    echo "Please Run As Root"
+    sleep 2
+    exit
+  fi
+}
+
+rootuser
+echo ""
+echo "Currently installed chroot instances:"
+ls /usr/share/chrooted/instances/
+echo ""
+echo -n "Name the chroot enviorment you are willing to start: "
+read name
+xhost +
+clear
+echo "$name has started successfully."
+echo "To exit and return to your current OS, run exit"
+echo "To start it back up, simply run chrooted start $name."
+/usr/share/chrooted/bin/chroot /usr/share/chrooted/instances/$name/root/

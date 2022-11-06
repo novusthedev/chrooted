@@ -1,0 +1,21 @@
+#/usr/bin/bash
+
+# Test for root user
+rootuser () {
+  if [[ "$EUID" = 0 ]]; then
+    continue
+  else
+    echo "Please Run As Root"
+    sleep 2
+    exit
+  fi
+}
+
+rootuser
+echo ""
+echo "Currently installed chroot instances:"
+ls /usr/share/chrooted/instances/
+echo ""
+echo "Distros downloaded:"
+ls /usr/share/chrooted/images
+echo ""

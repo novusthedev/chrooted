@@ -1,0 +1,23 @@
+#/usr/bin/bash
+
+# Test for root user
+rootuser () {
+  if [[ "$EUID" = 0 ]]; then
+    continue
+  else
+    echo "Please Run As Root"
+    sleep 2
+    exit
+  fi
+}
+
+rootuser
+
+echo ""
+echo "Distros downloaded:"
+ls /usr/share/chrooted/images
+echo ""
+echo -n "Name the OS you're currently removing: "
+read os
+rm -r /usr/share/chrooted/images/$os/
+echo "The image $os has been deleted successfully."
