@@ -25,6 +25,7 @@ echo ""
 echo "Images currently downloaded:"
 ls /usr/share/chrooted/images/$os
 echo ""
+echo "NOTE: You need to provide a file extension at the end."
 echo -n "Select an image to use on your $os enviorment: "
 read image
 

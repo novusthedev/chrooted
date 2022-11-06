@@ -18,6 +18,7 @@ ls /usr/share/chrooted/instances/
 echo ""
 echo -n "Name the chroot enviorment you are backing up: "
 read name
+echo "NOTE: You don't need to provide a file extension at the end."
 echo -n "Name the backup for $name: "
 read bcname
 echo "Backing up the current state of $name..."

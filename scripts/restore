@@ -23,6 +23,7 @@ mkdir -p /usr/share/chrooted/instances/$name/backups/
 echo "All current backups for $name:"
 ls /usr/share/chrooted/instances/$name/backups/
 echo ""
+echo "NOTE: You don't need to provide a file extension at the end."
 echo -n "Choose a backup to restore from: "
 read bcname
 echo "Removing current $name filesystem..."
