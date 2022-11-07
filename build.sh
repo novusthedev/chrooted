@@ -22,7 +22,7 @@ install -Dm755 scripts/create \
 	scripts/bcremove \
 	scripts/start  -t "usr/share/chrooted/scripts/"
 install -Dm755 bin/chroot -t "usr/share/chrooted/bin/"
-install -Dm755 install.sh -t "usr/"
 mkdir -p chrooted-bin/
 mv usr/ chrooted-bin/
+install -Dm755 install.sh -t "chrooted-bin/"
 echo "Building complete!"
